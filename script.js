@@ -5,11 +5,32 @@ $(document).ready(function(){
 
     my1Button.addEventListener('click', function btn1Function() {
         console.log('Yeah, you clicked me'); 
+    
         });
     
-         
-  });
+    let my2Button = document.createElement('button');
+        $('.btn-container').append(my2Button);
+        $(my2Button).attr('id', 'btn2');
+        $(my2Button).html('Click me! Click me!').click (function btn2Function(){
+        $('#btn1').text("Look, you clicked the magic button");
 
+    });
+
+    let my3Button = document.createElement('button');
+        $('.btn-container').append(my3Button);
+        $(my3Button).attr('id', 'btn3');
+        $(my3Button).html('And now have a FUN').click (function btn3Function(){
+        {
+            $('#btn1').css('background-color', '#872d6c');   
+            $('#btn2').css('background-color', '#62439c');
+            $('#btn3').css('background-color', '#178391');  
+        }
+    });  
+    
+  
+});
+
+ 
 /*
 Exercise 1
 Create a webpage
@@ -27,3 +48,7 @@ Exercise 3
 Add a third button to the webpage
 When the user clicks on the last button, change the background-color of each button
 */
+
+//My notes
+ //$(my2Button).html('Click me! Click me!');
+ //body > div > button:nth-child(2)
