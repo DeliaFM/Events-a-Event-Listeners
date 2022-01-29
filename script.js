@@ -21,10 +21,8 @@ $(document).ready(function(){
         $('.btn-container').append(my3Button);
         $(my3Button).attr('id', 'btn3');
 
-        let run = true;
         $(my3Button).html('And now have a FUN').click (function btn3Function(){
         {
-            if (run == true) {
 
                 let colInput = document.getElementById('colorInput').value;
                 //console.log(colInput);
@@ -43,11 +41,11 @@ $(document).ready(function(){
                     $('.btn-container button').css('background-color', colInput);
                     
                 }
-                run = false;
+                // effectively renaming class name to:
+                // -- lock style changes for old class
+                // -- provide new style settings for new class (after event styles)
+                $('.btn-container').toggleClass('btn-container btn-container-locked')
                 
-            } else {
-                alert("locked")
-            }
         }
     });
     

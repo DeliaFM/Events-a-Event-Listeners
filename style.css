@@ -15,6 +15,11 @@
     justify-content: space-between;
     
 }
+.btn-container-locked {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 button {
     height: 30px;
     border: medium mediumslateblue solid;
