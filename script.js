@@ -15,34 +15,43 @@ $(document).ready(function(){
         $('#btn1').text("Look, you clicked the magic button");
 
     });
+    
 
     let my3Button = document.createElement('button');
         $('.btn-container').append(my3Button);
         $(my3Button).attr('id', 'btn3');
-        
+
+        let run = true;
         $(my3Button).html('And now have a FUN').click (function btn3Function(){
         {
-            let colInput = document.getElementById('colorInput').value; 
-            console.log(colInput);
-            if (colInput === "") {
-                $('#btn1').css('background-color', '#872d6c');   
-                $('#btn2').css('background-color', '#62439c');
-                $('#btn3').css('background-color', '#178391'); 
+            if (run == true) {
+
+                let colInput = document.getElementById('colorInput').value;
+                //console.log(colInput);
+                if (colInput === "") {
+               
+                    $('.btn-container #btn1').css('background-color', '#872d6c');   
+                    $('.btn-container #btn2').css('background-color', '#62439c');
+                    $('.btn-container #btn3').css('background-color', '#178391'); 
+                    
+                } else {
+                    /**
+                     * using query to change each button in collection
+                     * of buttons limited by btn-container
+                     */
+    
+                    $('.btn-container button').css('background-color', colInput);
+                    
+                }
+                run = false;
                 
             } else {
-                /**
-                 * using query to change each button in collection
-                 * of buttons limited by btn-container
-                 */
-
-                $('.btn-container button').css('background-color', colInput);   
-                                
+                alert("locked")
             }
         }
     });
-
-        
-  });
+    
+});
 
  
 /*
