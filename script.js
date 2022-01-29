@@ -19,16 +19,30 @@ $(document).ready(function(){
     let my3Button = document.createElement('button');
         $('.btn-container').append(my3Button);
         $(my3Button).attr('id', 'btn3');
+        
         $(my3Button).html('And now have a FUN').click (function btn3Function(){
         {
-            $('#btn1').css('background-color', '#872d6c');   
-            $('#btn2').css('background-color', '#62439c');
-            $('#btn3').css('background-color', '#178391');  
+            let colInput = document.getElementById('colorInput').value; 
+            console.log(colInput);
+            if (colInput === "") {
+                $('#btn1').css('background-color', '#872d6c');   
+                $('#btn2').css('background-color', '#62439c');
+                $('#btn3').css('background-color', '#178391'); 
+                
+            } else {
+                /**
+                 * using query to change each button in collection
+                 * of buttons limited by btn-container
+                 */
+
+                $('.btn-container button').css('background-color', colInput);   
+                                
+            }
         }
-    });  
-    
-  
-});
+    });
+
+        
+  });
 
  
 /*
@@ -49,6 +63,17 @@ Add a third button to the webpage
 When the user clicks on the last button, change the background-color of each button
 */
 
-//My notes
- //$(my2Button).html('Click me! Click me!');
- //body > div > button:nth-child(2)
+/* Add some fun excercises 1 and 2
+Exercise 1
+Add an input to your previous webpage
+Its default value should be "blue"
+When the user clicks on the last button
+Read the desired color from the input
+Change the buttons' background-color to the given color
+Try it with different colors
+
+Exercise 2 (Optional)
+Now your previous application changes the buttons' color whenever the input vale has changed and you clicked on the last button
+Change the behavior by ignoring all the clicks after the first one. So even if the input has changed, keep the previous color if it has already changed once.
+
+*/
